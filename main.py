@@ -6,7 +6,7 @@ from pyrogram.raw.all import layer
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s")
-LOGGER = logging.getLogger(__name__)
+LOGGER = logging.getLogger(name)
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 plugins = dict(root="bot/modules")
@@ -33,6 +33,6 @@ class Bot(Client):
         LOGGER.info('Bot Stopped ! Bye..........')
 
 
-if __name__ == "__main__":
+if name == "main":
     app = Bot()
     app.run()
